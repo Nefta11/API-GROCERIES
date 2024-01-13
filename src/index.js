@@ -8,12 +8,14 @@ app.get('/home',(req,res)=>{
     });
 });
 
+
 app.post('/home', (req, res) => {
     // Aquí se procesa la petición POST y se envía una respuesta
     res.json({
         "status": "Petición por POST recibida..."
     });
 });
+
 
 app.delete('/home', (req, res) => {
     // Aquí se procesa la petición DELETE y se envía una respuesta
