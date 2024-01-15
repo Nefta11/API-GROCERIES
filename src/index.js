@@ -8,22 +8,13 @@ app.get('/home',(req,res)=>{
     });
 });
 
-
-app.post('/home', (req, res) => {
-    // Aquí se procesa la petición POST y se envía una respuesta
+app.get("/getOne/:barcode",(req,res)=>{
+    console.log(req.params);
     res.json({
-        "status": "Petición por POST recibida..."
-    });
+        "status":"Petición por get recibida..."
+    }); 
+    
 });
-
-
-app.delete('/home', (req, res) => {
-    // Aquí se procesa la petición DELETE y se envía una respuesta
-    res.json({
-        "status": "Petición por DELETE recibida..."
-    });
-});
-
 
 app.listen(3000,()=>{
     console.log("server on port 3200");
