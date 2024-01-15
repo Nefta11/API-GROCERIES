@@ -1,10 +1,6 @@
 const express=require('express');
 const app=express();
 
-app.listen(3000,()=>{
-    console.log("server on port 3200");
-});
-
 app.get('/home',(req,res)=>{
     //Aqui se procesa la peticion y se envia una respuesta
     res.json({
@@ -29,3 +25,6 @@ app.delete('/home', (req, res) => {
 });
 
 
+app.listen(3000,()=>{
+    console.log("server on port 3200");
+});
