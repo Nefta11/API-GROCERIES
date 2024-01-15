@@ -1,7 +1,7 @@
 const express=require('express');
 const app=express();
 
-app.get('/home',(req,res)=>{
+app.get('/getAll',(req,res)=>{
     //Aqui se procesa la peticion y se envia una respuesta
     res.json({
         "status":"Petición por get recibida..."
@@ -9,9 +9,9 @@ app.get('/home',(req,res)=>{
 });
 
 app.get("/getOne/:barcode",(req,res)=>{
-    console.log(req.params);
+    console.log(req.params.barcode);
     res.json({
-        "status":"Petición por get recibida..."
+        "status":"Petición por get recibida siuu..."
     }); 
     
 });
