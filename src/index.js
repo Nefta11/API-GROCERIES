@@ -16,7 +16,7 @@ app.get('/getAll',(req,res)=>{
     
 });*/
 
-app.get("/getOne/:numero", (req, res) => {
+app.get("/IngresaNumero/:numero", (req, res) => {
     const numero = req.params.numero;
     const numEntero = parseInt(numero);
 
