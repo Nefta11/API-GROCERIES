@@ -1,7 +1,7 @@
 const express= require('express');
 const app=express();
-app.use(express.json)
-app.use(express.json)
+app.use(express.json())
+
 
 /*
 
@@ -49,22 +49,34 @@ res.json({
 
 
 
-baseDeDatos =[{}]
+baseDeDatos =[{
+    "id":0,
+    "nombre":"Neftali",
+    "apellido":"Vergara"
+},
+{"id":2,
+"nombre":}]
 
-app.post("/insertOne/id",(req,res)=>{
+app.post("/insertOne",(req,res)=>{
 
+    const newDate= req.body;
+    
+    baseDeDatos.push(newDate)
+
+    res.json(baseDeDatos)
 });
 
 
 
 app.get("/getOne/id",(req,res)=>{
-
+const busqueda = req.body;
+const resultado = baseDeDatos
 });
 
 
 
 app.get("/getAll",(req,res)=>{
-    res.json({status:"Holaaaa"})
+   
 });
 
 
