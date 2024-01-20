@@ -1,5 +1,6 @@
-const express=require('express');
+const express= require('express');
 const app=express();
+app.use(express.json)
 app.use(express.json)
 
 
@@ -10,13 +11,13 @@ app.get('/getAll',(req,res)=>{
     });
 });
 
-/*app.get("/getOne/:barcode",(req,res)=>{
+app.get("/getOne/:barcode",(req,res)=>{
     console.log(req.params);
     res.json({
         "status":"Petición por get recibida siuu..."
     }); 
     
-});*/
+});
 
 app.get("/IngresaNumero/:numero", (req, res) => {
     const numero = req.params.numero;
@@ -44,12 +45,11 @@ res.json({
     status:"producto insertado"
 })
 
+});
 
-})
 
-
-app.listen(3000,()=>{
-    console.log("server on port 3000");
+app.listen(3200,()=>{
+    console.log("server on port 3200 Siuuu");
 });
 
 //soy dos siuuu 
