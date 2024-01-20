@@ -4,12 +4,15 @@
   "description": "��#\u0000 \u0000A\u0000P\u0000I\u0000-\u0000G\u0000R\u0000O\u0000C\u0000E\u0000R\u0000I\u0000E\u0000S\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/index.js"
+    "dev": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "Neftali Arturo Hernández Vergara",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
   }
 }
