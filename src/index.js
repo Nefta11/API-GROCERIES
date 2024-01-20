@@ -3,6 +3,7 @@ const app=express();
 app.use(express.json)
 app.use(express.json)
 
+/*
 
 app.get('/getAll',(req,res)=>{
     //Aqui se procesa la peticion y se envia una respuesta
@@ -37,8 +38,6 @@ app.get("/IngresaNumero/:numero", (req, res) => {
     });
 });
 
-
-
 app.post("/insertProduct",(req,res)=>{
 console.log(req.body)
 res.json({
@@ -46,6 +45,39 @@ res.json({
 })
 
 });
+*/
+
+
+
+baseDeDatos =[{}]
+
+app.post("/insertOne/id",(req,res)=>{
+
+});
+
+
+
+app.get("/getOne/id",(req,res)=>{
+
+});
+
+
+
+app.get("/getAll",(req,res)=>{
+    res.json({status:"Holaaaa"})
+});
+
+
+
+app.delete("/deleteOne/id",(req,res)=>{
+
+});
+
+app.put("/updateOne/id",(req,res)=>{
+
+})
+
+
 
 
 app.listen(3200,()=>{
