@@ -55,7 +55,8 @@ baseDeDatos =[{
     "apellido":"Vergara"
 },
 {"id":2,
-"nombre":}]
+"nombre":"Avryl",
+"apellido":"Salas"}]
 
 app.post("/insertOne",(req,res)=>{
 
@@ -68,10 +69,21 @@ app.post("/insertOne",(req,res)=>{
 
 
 
-app.get("/getOne/id",(req,res)=>{
-const busqueda = req.body;
-const resultado = baseDeDatos
-});
+// Ruta GET para obtener un usuario por ID
+app.get("/getOne/:id", (req, res) => {
+    // Obtener el ID de la solicitud
+    const idBuscado = parseInt(req.params.id);
+  
+    // Buscar el usuario en la base de datos
+    const resultado = baseDeDatos.find(usuario => usuario.id === idBuscado);
+  
+    // Verificar si se encontró el usuario
+    if (resultado) {
+      res.json(resultado);
+    } else {
+      res.status(404).json({ mensaje: "Usuario no encontrado" });
+    }
+  });
 
 
 
