@@ -70,15 +70,11 @@ app.get("/getAll",(req,res)=>{
     });
 
 
-// Ruta GET para obtener un usuario por ID
 app.get("/getOne/:id", (req, res) => {
     // Obtener el ID de la solicitud
     const idBuscado = parseInt(req.params.id);
-  
-    // Buscar el usuario en la base de datos
     const resultado = baseDeDatos.find(usuario => usuario.id === idBuscado);
   
-    // Verificar si se encontró el usuario
     if (resultado) {
       res.json(resultado);
     } else {
