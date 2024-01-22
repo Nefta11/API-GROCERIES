@@ -82,7 +82,7 @@ app.get("/getOne/:id", (req, res) => {
     if (resultado) {
       res.json(resultado);
     } else {
-      res.status(404).json({ mensaje: "Usuario no encontrado" });
+      res.json({ mensaje: "Usuario no encontrado" });
     }
   });
 
