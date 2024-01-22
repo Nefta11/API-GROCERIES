@@ -50,14 +50,9 @@ res.json({
 
 
 baseDeDatos = [{
-    "id": 0,
+    "id": 1,
     "nombre": "Neftali",
     "apellido": "Vergara"
-},
-{
-    "id": 1,
-    "nombre": "Avryl",
-    "apellido": "Salas"
 }]
 
 app.post("/insertOne", (req, res) => {
