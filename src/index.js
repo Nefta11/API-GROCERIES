@@ -88,7 +88,7 @@ app.get("/getOne/:id", (req, res) => {
 
 
 app.get("/getAll",(req,res)=>{
-   
+res.json(baseDeDatos)
 });
 
 
