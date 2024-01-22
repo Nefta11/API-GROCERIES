@@ -54,19 +54,20 @@ baseDeDatos =[{
     "nombre":"Neftali",
     "apellido":"Vergara"
 },
-{"id":2,
+{"id":1,
 "nombre":"Avryl",
 "apellido":"Salas"}]
 
 app.post("/insertOne",(req,res)=>{
-
     const newDate= req.body;
-    
     baseDeDatos.push(newDate)
-
-    res.json(baseDeDatos)
+    res.json({status:"Usuario Insertado Correctamente"})
 });
 
+
+app.get("/getAll",(req,res)=>{
+    res.json(baseDeDatos)
+    });
 
 
 // Ruta GET para obtener un usuario por ID
@@ -84,13 +85,6 @@ app.get("/getOne/:id", (req, res) => {
       res.status(404).json({ mensaje: "Usuario no encontrado" });
     }
   });
-
-
-
-app.get("/getAll",(req,res)=>{
-res.json(baseDeDatos)
-});
-
 
 
 app.delete("/deleteOne/id",(req,res)=>{
