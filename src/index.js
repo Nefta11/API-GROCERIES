@@ -87,15 +87,16 @@ app.get("/getOne/:id", (req, res) => {
 
 app.delete("/deleteOne/:id", (req, res) => {
     const idBuscado = parseInt(req.params.id);
-    const index = baseDeDatos.findIndex(usuario => usuario.id === idBuscado);
+    const usuarioEncontrado = baseDeDatos.find(usuario => usuario.id === idBuscado);
 
-    if (index !== -1) {
-        baseDeDatos.splice(index, 1);
+    if (usuarioEncontrado) {
+        baseDeDatos.splice(baseDeDatos.indexOf(usuarioEncontrado), 1);
         res.json({ status: "Usuario Eliminado Correctamente" });
     } else {
-        res.json({ mensaje: "Usuario no encontrado" });
+        res.status(404).json({ mensaje: "Usuario no encontrado" });
     }
 });
+
 
 app.put("/updateOne/:id", (req, res) => {
     const idBuscado = parseInt(req.params.id);
