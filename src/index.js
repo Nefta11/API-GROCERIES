@@ -93,7 +93,7 @@ app.delete("/deleteOne/:id", (req, res) => {
         baseDeDatos.splice(baseDeDatos.indexOf(usuarioEncontrado), 1);
         res.json({ status: "Usuario Eliminado Correctamente" });
     } else {
-        res.status(404).json({ mensaje: "Usuario no encontrado" });
+        res.json({ mensaje: "Usuario no encontrado" });
     }
 });
 
