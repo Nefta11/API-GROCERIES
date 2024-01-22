@@ -73,7 +73,7 @@ app.get("/getAll", (req, res) => {
 
 
 app.get("/getOne/:id", (req, res) => {
-    // Obtener el ID de la solicitud
+
     const idBuscado = parseInt(req.params.id);
     const resultado = baseDeDatos.find(usuario => usuario.id === idBuscado);
 
@@ -85,13 +85,32 @@ app.get("/getOne/:id", (req, res) => {
 });
 
 
-app.delete("/deleteOne/id", (req, res) => {
+app.delete("/deleteOne/:id", (req, res) => {
+    const idBuscado = parseInt(req.params.id);
+    const index = baseDeDatos.findIndex(usuario => usuario.id === idBuscado);
 
+    if (index !== -1) {
+        baseDeDatos.splice(index, 1);
+        res.json({ status: "Usuario Eliminado Correctamente" });
+    } else {
+        res.json({ mensaje: "Usuario no encontrado" });
+    }
 });
 
-app.put("/updateOne/id", (req, res) => {
+app.put("/updateOne/:id", (req, res) => {
+    const idBuscado = parseInt(req.params.id);
+    const usuarioUpdate = req.body;
+    const usuario = baseDeDatos.find(u => u.id === idBuscado);
 
-})
+    if (usuario) {
+        usuario.nombre = usuarioUpdate.nombre;
+        usuario.apellido = usuarioUpdate.apellido;
+        res.json({ status: "Usuario Actualizado Correctamente" });
+    } else {
+        res.json({ mensaje: "Usuario no encontrado" });
+    }
+});
+
 
 
 
