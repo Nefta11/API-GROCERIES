@@ -62,9 +62,11 @@ app.post("/insertOne", (req, res) => {
 });
 
 
+
 app.get("/getAll", (req, res) => {
     res.json(baseDeDatos)
 });
+
 
 
 app.get("/getOne/:id", (req, res) => {
