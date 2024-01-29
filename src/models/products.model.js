@@ -16,6 +16,7 @@ const productSchema = new Schema({
 },{
     versionKey:false,
     timestamps:true
+    
 });
 
 export default model ('products',productSchema);
