@@ -15,4 +15,6 @@ productDAO.insertProduct= async(product)=>{
     const productSaved= new Product (product);
 }
 
+
+
 export default productDAO;
