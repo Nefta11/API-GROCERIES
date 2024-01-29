@@ -14,3 +14,14 @@ export const getAll=(req, res)=>{
         status:"Hola mundo"
     });
 }
+
+export const getOne = (req, res) => {
+    productDAO.getOne(req.params.bc)
+    .then(result => {
+        if(result != null)
+            res.json(result)
+        else
+            res.json({status:"Product not found"})
+    })
+    .catch(err=>res.json({status: "Servidor no disponible"}))
+}
