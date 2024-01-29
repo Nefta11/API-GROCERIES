@@ -6,4 +6,13 @@ productDAO.getAll=async()=>{
     return products;
 }
 
+productDAO.getOne = async(bc) => {
+    const product = await Product.findOne({barcode:bc});
+    return product
+};
+
+productDAO.insertProduct= async(product)=>{
+    const productSaved= new Product (product);
+}
+
 export default productDAO;
