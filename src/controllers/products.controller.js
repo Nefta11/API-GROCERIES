@@ -25,3 +25,7 @@ export const getOne = (req, res) => {
     })
     .catch(err=>res.json({status: "Servidor no disponible"}))
 }
+
+export const insertProduct=(req,res)=>{
+    productDAO.insertProduct()
+}

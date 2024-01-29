@@ -13,6 +13,8 @@ productDAO.getOne = async(bc) => {
 
 productDAO.insertProduct= async(product)=>{
     const productSaved= new Product (product);
+    productSaved.save();
+    return true;
 }
 
 
