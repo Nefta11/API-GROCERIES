@@ -17,6 +17,10 @@ productDAO.insertProduct= async(product)=>{
     return true;
 }
 
+productDAO.updateProduct=async(barcode,product)=>{
+    await Product.findOneAndUpdate({barcode:barcode},Product);
+    return true;
+}
 
 
-export default productDAO;
+export default productDAO ;
