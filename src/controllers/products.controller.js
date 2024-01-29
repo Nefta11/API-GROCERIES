@@ -23,7 +23,7 @@ export const getOne = (req, res) => {
         else
             res.json({status:"Product not found"})
     })
-    .catch(err=>res.json({status: "Servidor no disponible"}))
+    .catch(err=>res.json({status: "Server unaivalible"}))
 }
 
 export const insertProduct=(req,res)=>{
@@ -34,4 +34,5 @@ export const insertProduct=(req,res)=>{
                 status:"Product Saved"
         })
     })
+    .catch(err=>res.json({status: "Servidor no disponible"}))
 }
