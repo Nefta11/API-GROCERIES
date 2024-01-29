@@ -27,5 +27,11 @@ export const getOne = (req, res) => {
 }
 
 export const insertProduct=(req,res)=>{
-    productDAO.insertProduct()
+    productDAO.insertProduct(req.body)
+    .then(result=>{
+        if(result)
+            res.json({
+                status:"Product Saved"
+        })
+    })
 }
