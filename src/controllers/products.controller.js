@@ -34,12 +34,37 @@ export const insertProduct = (req, res) => {
 };
 
 export const updateProduct = (req, res) => {
-    productDAO.updateProduct(req.params.barcode, req.body)
+    productDAO.updateProduct(req.params.bc, req.body)
 
         .then(result => {
             if (result)
                 res.json({
                     status: "Product Updated"
+                });
+                else
+                res.json({
+                    status: "server unavailable"
+                });
+        })
+        .catch(err => {
+            res.json({
+                status: "server unavailable"
+            });
+        })
+};
+
+
+export const deleteProduct = (req, res) => {
+    productDAO.delteProduct(req.params.bc)
+
+        .then(result => {
+            if (result)
+                res.json({
+                    status: "Product deleted"
+                });
+                else
+                res.json({
+                    status: "server unavailable"
                 });
         })
         .catch(err => {
