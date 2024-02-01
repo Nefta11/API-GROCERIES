@@ -33,6 +33,4 @@ productDAO.delteProduct = async (bc) => {
         return false;
 }
 
-
-
 export default productDAO;
