@@ -3,8 +3,8 @@ import productDAO from '../dao/products.dao.js'
 
 export const getAll = (req, res) => {
     productDAO.getAll()
-        .then((result) => {
-            res.json(result);
+        .then((products) => {
+            res.json(products);
         })
         .catch((err) => {
             res.json(err);
