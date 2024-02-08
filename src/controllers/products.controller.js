@@ -26,9 +26,7 @@ export const insertProduct = (req, res) => {
     productDAO.insertProduct(req.body)
         .then(result => {
             if (result)
-                res.json({
-                    status: "Product Saved"
-                })
+            res.redirect('/api/products/')
         })
         .catch(err => res.json({ status: "Servidor no disponible" }));
 };
