@@ -31,6 +31,7 @@ export const insertProduct = (req, res) => {
         .catch(err => res.json({ status: "Servidor no disponible" }));
 };
 
+
 export const updateProduct = (req, res) => {
     productDAO.updateProduct(req.params.bc, req.body)
 
