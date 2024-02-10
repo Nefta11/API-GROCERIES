@@ -15,15 +15,17 @@
     <div data-role="page">
         <div data-role="header">
             <h1>Abarrotes TI</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" data-icon="home">Inicio</a></li>
+                    <li><a href="#" data-icon="eye" class="ui-btn-active">Productos</a></li>
+                    <li><a href="#" data-icon="user">Empleados</a></li>
+                </ul>
+                          
+            </div>
         </div>
-        <div data-role="navbar">
-            <ul>
-                <li><a href="#" data-icon="home">Inicio</a></li>
-                <li><a href="#" data-icon="eye" class="ui-btn-active">Productos</a></li>
-                <li><a href="#" data-icon="user">Empleados</a></li>
-            </ul>
-                      
-        </div>
+
+
 
         <div data-role="content">
             <form action="/api/products" method="post">
