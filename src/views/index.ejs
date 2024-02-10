@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div data-role="page">
+    <div data-role="page" data-theme="b">
         <div data-role="header">
             <h1>Abarrotes TI</h1>
             <div data-role="navbar">
@@ -43,8 +43,22 @@
                 </select>
                 <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
             </form>
+            <form>
+                    <input data-type="search" id="searchForCollapsibleSetChildren">
+            </form>
+                <div data-role="collapsibleset" data-filter="true" data-children="> div, > div div ul li"
+                data-inset="true" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren">
+                  
+                <% products.forEach((product)=>{%>
+                            <div data-role="collapsible" data-filtertext="<%= products.description %>">
+                        <h1>
+                            <%= product.description %>
+                        </h1>
+                    </div>
+                    <%})%>
+            </div>
+             
         </div>
-
         <div data-role="footer">
             <h5>Developed by NeftaSiu</h5>
         </div>

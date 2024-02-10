@@ -4,7 +4,7 @@ import productDAO from '../dao/products.dao.js'
 export const getAll = (req, res) => {
     productDAO.getAll()
         .then((products) => {
-            res.render('../src/views/index');
+            res.render('../src/views/index',{products});
         })
         .catch((err) => {
             res.json(err);
