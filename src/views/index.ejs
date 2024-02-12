@@ -58,8 +58,6 @@
                         <ul data-role="listview" data-inset="false">
                             <li>
                                 Código de barras:<%= product.barcode %>
-                                <a href="/api/products/getOne/<%= product.barcode%>" data-role="button" data-icon="edit" data-iconpos="notext" data-mini="true" class="ui-btn-right">Editar</a>
-
                             </li>
                             <li>Marca:<%= product.brand %>
                             </li>
@@ -72,6 +70,10 @@
                             <li>Fecha de caducidad:<%= product.expiredDate %>
                             </li>
                             <li>Status:<%= product.status %>
+                            </li>
+
+                            <li>
+                            <a href="/api/products/getOne/<%= product.barcode%>" class="ui-btn">Editar</a>
                             </li>
                         </ul>
                     </div>
