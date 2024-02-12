@@ -20,7 +20,7 @@
 
 
         <div data-role="content">
-            <form action="/api/products/<%= product.barcode %>" method="put">
+            <form action="/api/products/updateProduct/<%= product.barcode %>" method="post">
                 <input type="text" name="barcode" value="<%= product.barcode %>">
                 <input type="text" name="description" value="<%= product.description %>">
                 <input type="text" name="brand" value="<%= product.brand %>">
@@ -33,11 +33,7 @@
                     <option value="0">No</option>
                     <option value="1">Si</option>
                 </select>
-                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Guardar</button>
-            </form>
-            
-            <form>
-                    <input data-type="search" id="searchForCollapsibleSetChildren">
+                <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Actualizar</button>
             </form>
 
         </div>
