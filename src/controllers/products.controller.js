@@ -1,6 +1,7 @@
 import { model } from 'mongoose';
 import productDAO from '../dao/products.dao.js'
 
+//Nos muestra todos los elementos disponibles en la BD
 export const getAll = (req, res) => {
     productDAO.getAll()
         .then((products) => {
@@ -12,16 +13,17 @@ export const getAll = (req, res) => {
 };
 
 export const getOne = (req, res) => {
-    productDAO.getOne(req.params.bc)
-        .then(result => {
-            if (result != null)
-                res.json(result)
+    productDAO.getOne(req.params.barcode)
+        .then((product) => {
+            if (product != null)
+            res.render('../src/views/edit',{product});
             else
                 res.json({ status: "Product not found" })
         })
-        .catch(err => res.json({ status: "Server unaivalible" }))
+        .catch(err => res.json({ status: "Server unaivalible",message:err }))
 }
 
+//Nos muestra todos los elementos disponibles en la BD
 export const insertProduct = (req, res) => {
     productDAO.insertProduct(req.body)
         .then(result => {
@@ -33,13 +35,11 @@ export const insertProduct = (req, res) => {
 
 
 export const updateProduct = (req, res) => {
-    productDAO.updateProduct(req.params.bc, req.body)
+    productDAO.updateProduct(req.params.barcode, req.body)
 
-        .then(result => {
-            if (result)
-                res.json({
-                    status: "Product Updated"
-                });
+        .then(product => {
+            if (product)
+            res.redirect('/api/products/');
                 else
                 res.json({
                     status: "server unavailable"

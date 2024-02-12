@@ -53,9 +53,13 @@
                             <div data-role="collapsible" data-filtertext="<%= products.description %>">
                         <h3>
                             <%= product.description %>
+
                         </h3>
                         <ul data-role="listview" data-inset="false">
-                            <li>Código de barras:<%= product.barcode %>
+                            <li>
+                                Código de barras:<%= product.barcode %>
+                                <a href="/api/products/getOne/<%= product.barcode%>" data-role="button" data-icon="edit" data-iconpos="notext" data-mini="true" class="ui-btn-right">Editar</a>
+
                             </li>
                             <li>Marca:<%= product.brand %>
                             </li>
@@ -79,6 +83,8 @@
         </div>
 
     </div>
+
+    
 </body>
 
 </html>
