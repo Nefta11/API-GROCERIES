@@ -4,8 +4,8 @@ import {getAll, insertProduct,getOne,updateProduct,deleteProduct } from '../cont
 const router = Router();
 
 router.get('/',getAll);
-router.get('/getOne/:barcode',getOne)
+router.get('/:barcode',getOne)
 router.post('/', insertProduct);
-router.post('/updateProduct/:barcode',updateProduct)
+router.post('/:barcode',updateProduct)
 router.delete('/:barcode',deleteProduct)
 export default router;
