@@ -54,13 +54,11 @@ export const updateProduct = (req, res) => {
 
 
 export const deleteProduct = (req, res) => {
-    productDAO.delteProduct(req.params.bc)
+    productDAO.delteProduct(req.params.barcode)
 
-        .then(result => {
-            if (result)
-                res.json({
-                    status: "Product deleted"
-                });
+        .then(product => {
+            if (product)
+            res.redirect('/api/products/');
                 else
                 res.json({
                     status: "server unavailable"

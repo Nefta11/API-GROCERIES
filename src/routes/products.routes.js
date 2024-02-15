@@ -7,5 +7,5 @@ router.get('/',getAll);
 router.get('/:barcode',getOne)
 router.post('/', insertProduct);
 router.post('/:barcode',updateProduct)
-router.delete('/:barcode',deleteProduct)
+router.get('/De/:barcode',deleteProduct)
 export default router;
