@@ -28,7 +28,7 @@
 
 
         <div data-role="content">
-            <form action="/api/products/<%= product.barcode %>" method="post">
+            <form action="/<%= product.barcode %>" method="post">
                 <h4>
                     <%= product.description %>
                 </h4>
@@ -47,7 +47,7 @@
                 <button type="submit" id="submit-6" class="ui-shadow ui-btn ui-corner-all ui-mini">Actualizar</button>
 
                 <li>
-                    <a href="/api/products" class="ui-btn">Cancelar</a>
+                    <a href="/" class="ui-btn">Cancelar</a>
                     </li>
             </form>
 

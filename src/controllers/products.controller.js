@@ -28,7 +28,7 @@ export const insertProduct = (req, res) => {
     productDAO.insertProduct(req.body)
         .then(result => {
             if (result)
-            res.redirect('/api/products/')
+            res.redirect('/')
         })
         .catch(err => res.json({ status: "Servidor no disponible" }));
 };
@@ -39,7 +39,7 @@ export const updateProduct = (req, res) => {
 
         .then(product => {
             if (product)
-            res.redirect('/api/products/');
+            res.redirect('/');
                 else
                 res.json({
                     status: "server unavailable"
@@ -58,7 +58,7 @@ export const deleteProduct = (req, res) => {
 
         .then(product => {
             if (product)
-            res.redirect('/api/products/');
+            res.redirect('/');
                 else
                 res.json({
                     status: "server unavailable"
